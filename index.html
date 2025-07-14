@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Subin Babu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+  <!-- Particles.js & Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Vanilla-Tilt for 3D card tilt -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+
+  <style>
+    body { font-family: 'Inter',sans-serif; }
+    /* Hero overlay to sit on top of particles */
+    #particles-js { position:fixed; inset:0; z-index:-1; }
+    /* SVG Dividers */
+    .section-divider { display:block; width:100%; height:80px; margin-top:-1px; }
+    /* Skill bars */
+    .skill-bar { background:#374151; border-radius:9999px; overflow:hidden; }
+    .skill-bar > div { height:0.5rem; border-radius:9999px; }
+
+    /* Button styles */
+    .btn {
+      @apply inline-block px-6 py-2 rounded-full font-semibold text-white transition-transform transform hover:-translate-y-1 shadow-lg;
+    }
+    .btn-grad { @apply bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700; }
+    .btn-outline {
+      @apply border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+
+    <!-- Navigation (make sure this is present) -->
+<nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-lg z-40 shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+      Subin Babu
+    </div>
+    <div class="hidden md:flex space-x-8 text-lg">
+      <a href="#home"     class="hover:text-blue-400 hover:border-b-2 border-blue-400 pb-1">Home</a>
+      <a href="#about"    class="hover:text-blue-400 hover:border-b-2 border-blue-400 pb-1">About</a>
+      <a href="#skills"   class="hover:text-blue-400 hover:border-b-2 border-blue-400 pb-1">Skills</a>
+      <a href="#projects" class="hover:text-blue-400 hover:border-b-2 border-blue-400 pb-1">Projects</a>
+      <a href="#contact"  class="hover:text-blue-400 hover:border-b-2 border-blue-400 pb-1">Contact</a>
+    </div>
+    <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Sidebar (unchanged) -->
+<div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-gray-900/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+  <div class="flex justify-between items-center p-6 border-b border-gray-700">
+    <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">Subin</div>
+    <button id="menu-close" class="text-2xl focus:outline-none"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="flex flex-col space-y-6 p-6 text-lg">
+    <a href="#home"     class="hover:text-blue-400">Home</a>
+    <a href="#about"    class="hover:text-blue-400">About</a>
+    <a href="#skills"   class="hover:text-blue-400">Skills</a>
+    <a href="#projects" class="hover:text-blue-400">Projects</a>
+    <a href="#contact"  class="hover:text-blue-400">Contact</a>
+  </div>
+</div>
+
+  <!-- Hero with particles + typed.js -->
+  <div id="particles-js"></div>
+  <section id="home" class="relative flex items-center justify-center min-h-screen pt-20">
+    <div class="text-center px-6 z-10 max-w-2xl">
+      <h1 class="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+        Hey, I’m Subin Babu
+      </h1>
+      <h2 class="mt-4 text-2xl md:text-3xl text-gray-300">
+        <span id="typed"></span>
+      </h2>
+      <a href="#projects" class="mt-8 btn btn-grad">Discover My Work</a>
+    </div>
+  </section>
+
+  <script>
+    /* particles.js config */
+    particlesJS.load('particles-js', 'https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/particles.json', () => {});
+    /* typed.js config */
+    new Typed('#typed', {
+      strings: [
+        'A Python Full-Stack Developer.',
+        'Building Digital Masterpieces.',
+        'Turning Ideas into Code.'
+      ],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true
+    });
+  </script>
+
+  <!-- Diagonal divider -->
+  <svg class="section-divider" viewBox="0 0 1200 100" preserveAspectRatio="none">
+    <path d="M0,0 L1200,0 L0,100 Z" fill="#1f2937"/>
+  </svg>
+
+  <!-- About Section (unchanged) -->
+  <section id="about" class="bg-gray-800/50 py-24 relative overflow-hidden">
+    <!-- … your existing about markup … -->
+  </section>
+
+  <!-- Diagonal divider reversed -->
+  <svg class="section-divider" viewBox="0 0 1200 100" preserveAspectRatio="none">
+    <path d="M1200,0 L1200,100 L0,100 Z" fill="#111827"/>
+  </svg>
+
+  <!-- Skills Section with progress bars -->
+  <section id="skills" class="py-24 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl text-center font-bold bg-clip-text text-transparent
+                 bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
+        Skills & Expertise
+      </h2>
+      <div class="space-y-6">
+        <!-- repeat this block per skill -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span>Python & Django</span><span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="bg-gradient-to-r from-blue-400 to-purple-500 w-9/12"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span>Bootstrap & Tailwind</span><span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="bg-gradient-to-r from-blue-400 to-purple-500 w-10/12"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span>Databases</span><span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="bg-gradient-to-r from-blue-400 to-purple-500 w-8/12"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span>Dev Tools</span><span>70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="bg-gradient-to-r from-blue-400 to-purple-500 w-7/12"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Updated Projects Section -->
+<section id="projects" class="py-24 bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl text-center font-bold bg-clip-text text-transparent
+               bg-gradient-to-r from-blue-400 to-purple-500 mb-16">
+      Featured Projects
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Card 1: E-Commerce Platform -->
+      <div data-tilt class="bg-gray-900 rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500">
+        <img src="https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg"
+             alt="E-Commerce Platform"
+             class="w-full h-56 object-cover"/>
+        <div class="p-6 space-y-4">
+          <h3 class="text-xl font-semibold text-blue-400">E-Commerce Platform</h3>
+          <p class="text-gray-300">
+            A robust online store built with Django, React, and Stripe, featuring real-time inventory and user dashboards.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-grad">Live Demo</a>
+            <a href="#" class="btn btn-outline">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Music Streaming App -->
+      <div data-tilt class="bg-gray-900 rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=80"
+             alt="Music Streaming App"
+             class="w-full h-56 object-cover"/>
+        <div class="p-6 space-y-4">
+          <h3 class="text-xl font-semibold text-blue-400">Music Streaming App</h3>
+          <p class="text-gray-300">
+            A trending music platform with Python and Bootstrap, featuring streaming, creator channels, and user-creator interaction.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-grad">Live Demo</a>
+            <a href="#" class="btn btn-outline">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: College Portal -->
+      <div data-tilt class="bg-gray-900 rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500">
+        <img src="https://media.istockphoto.com/id/1159030397/vector/vector-of-a-child-a-boy-looking-at-the-stairs-leading-to-the-door-of-modern-digital-world.jpg?s=612x612&w=0&k=20&c=cPMvHwuxLy3rWZaHzhiXY_TFZXkl0KGp-wHGFA8vak4="
+             alt="College Portal"
+             class="w-full h-56 object-cover"/>
+        <div class="p-6 space-y-4">
+          <h3 class="text-xl font-semibold text-blue-400">College Portal</h3>
+          <p class="text-gray-300">
+            A comprehensive student portal system with role-based access, course management, and real-time notifications.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-grad">Live Demo</a>
+            <a href="#" class="btn btn-outline">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <script>
+    // initialize all tilt cards
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 15, speed: 400, glare: true, "max-glare": 0.2
+    });
+  </script>
+
+  <!-- Contact Section -->
+<section id="contact" class="py-24 bg-gray-900 relative">
+  <div class="max-w-2xl mx-auto px-6 text-center space-y-6">
+    <h2 class="text-4xl font-bold bg-clip-text text-transparent
+               bg-gradient-to-r from-blue-400 to-purple-500">
+      Let’s Collaborate
+    </h2>
+    <p class="text-gray-300 text-lg">
+      Have a project idea or just want to say hi? Reach out!
+    </p>
+    <div class="flex justify-center space-x-6">
+      <a href="mailto:subinplr004@gmail.com"
+         class="btn btn-grad">
+        <i class="fas fa-envelope mr-2"></i> Email Me
+      </a>
+      <a href="https://linkedin.com/in/subinbabu369" target="_blank"
+         class="btn btn-outline">
+        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer (unchanged) -->
+  <footer class="bg-gray-900 py-8">
+    <div class="text-center text-gray-400">
+      © 2025 Subin Babu. Built with <i class="fas fa-heart text-red-400 animate-pulse"></i> and passion.
+    </div>
+  </footer>
+</body>
+</html>
